@@ -1,0 +1,4226 @@
+#LyX file created by tex2lyx 2.2
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/santiago/Escritorio/Notebooks/Redes/
+\textclass article
+\begin_preamble
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+
+
+    
+    
+    \usepackage{graphicx}% Used to insert images
+    \usepackage{adjustbox}% Used to constrain images to a maximum size 
+    \usepackage{color}% Allow colors to be defined
+    \usepackage{enumerate}% Needed for markdown enumerations to work
+    % Used to adjust the document margins
+    % Equations
+    % Equations
+    \usepackage[mathletters]{ucs}% Extended unicode (utf-8) support
+    % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb}% verbatim replacement that allows latex
+    \usepackage{grffile}% extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    % longtable support required by pandoc >1.10
+    % table support for pandoc > 1.12.2
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Pr?ctico 3}
+    
+    
+    
+
+    % Pygments definitions
+    
+
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    
+    % Slightly bigger margins than the latex defaults
+    
+    
+    
+    
+
+    
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8x
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 1
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref section
+\pdf_pdfusetitle 0
+\pdf_quoted_options "% so long urls are correctly broken across lines
+colorlinks=true,urlcolor=blue,linkcolor=darkorange,citecolor=darkgreen,"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+1. Enunciar las funciones de la Capa de Enlace de Datos
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "enunciar-las-funciones-de-la-capa-de-enlace-de-datos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Enmarcado de tramas 
+\end_layout
+
+\begin_layout Itemize
+Detección y corrección de errores de transmisión 
+\end_layout
+
+\begin_layout Itemize
+Control de flujo 
+\end_layout
+
+\begin_layout Itemize
+Sincronización de octeto y de carácter 
+\end_layout
+
+\begin_layout Subsubsection
+2. ¿Qué alternativa conoce para el Enmarcado de Tramas de la Capa de Enlace?
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "quuxe9-alternativa-conoce-para-el-enmarcado-de-tramas-de-la-capa-de-enlace"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conteo de carácteres 
+\end_layout
+
+\begin_layout Itemize
+Relleno de bits 
+\end_layout
+
+\begin_layout Itemize
+Relleno de carácteres 
+\end_layout
+
+\begin_layout Itemize
+Violaciones de codificación de la capa física (Ej. Codificación Manchester) 
+\end_layout
+
+\begin_layout Subsubsection
+3. Si la cadena de bits 0111101111101111110 se rellena ¿Cuál es la cadena de salida?
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "si-la-cadena-de-bits-0111101111101111110-se-rellena-cuuxe1l-es-la-cadena-de-salida"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+011110111110011111010
+\end_layout
+
+\begin_layout Subsubsection
+4. Para una transmisión de códigos BCD de 4 bits, se decide emplear un esquema de corrección de errores de un bit, mediante Código Hamming
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "para-una-transmisiuxf3n-de-cuxf3digos-bcd-de-4-bits-se-decide-emplear-un-esquema-de-correcciuxf3n-de-errores-de-un-bit-mediante-cuxf3digo-hamming"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plantear la tabla del código resultante a transmitir, indicando la lógica de los bits de paridad resultante. 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Tabular 
+<lyxtabular version="3" rows="11" columns="3">
+<features rotate="0" booktabs="true" islongtable="true">
+<column alignment="none" valignment="top" special="@{}l">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special="l@{}">
+<row endhead="true">
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Decimal 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Binario 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Hamming
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0000 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0000000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0001 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1101001
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0010 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0101010
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0011 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1000011
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0100 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1001100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0101 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0100101
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0110 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1100110
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+7 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0111 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0001111
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1000 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1110000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+9 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+1001 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+0011001
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+bit 1 = b3 ⊕ b5 ⊕ b7
+\end_layout
+
+\begin_layout Verbatim
+bit 2 = b3 ⊕ b6 ⊕ b7
+\end_layout
+
+\begin_layout Verbatim
+bit 4 = b5 ⊕ b6 ⊕ b7
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suponer un error en la tranmisión del bit 5 del código BCD 9 (1001) ¿Cómo la corregiría el receptor? 
+\end_layout
+
+\begin_layout Standard
+Msg. Recibido = 0011101
+\end_layout
+
+\begin_layout Standard
+Cálculo Hamming
+\end_layout
+
+\begin_layout Verbatim
+bit 1 = 1
+\end_layout
+
+\begin_layout Verbatim
+bit 2 = 0
+\end_layout
+
+\begin_layout Verbatim
+bit 3 = 0
+\end_layout
+
+\begin_layout Standard
+OR entre los bits 1, 2 y 4 del mensaje recibido y los calculados según Hamming:
+\end_layout
+
+\begin_layout Standard
+100 ⊕ 001 = 101
+\end_layout
+
+\begin_layout Standard
+Invierto -
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textgreater
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ 101 = 5
+\end_layout
+
+\begin_layout Standard
+Hay un error en el bit 5, entonces el receptor sabe que tiene que cambiar el uno en el bit 5 por un cero.
+\end_layout
+
+\begin_layout Subsubsection
+5. Se desea enviar la clave 9815, en formato BCD, asegurandolá mediante Código Hamming.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "se-desea-enviar-la-clave-9815-en-formato-bcd-asegurandoluxe1-mediante-cuxf3digo-hamming."
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Codificar el mensaje a enviar 
+\end_layout
+
+\begin_layout Verbatim
+9 | 0011001
+\end_layout
+
+\begin_layout Verbatim
+8 | 1110000
+\end_layout
+
+\begin_layout Verbatim
+1 | 1101001
+\end_layout
+
+\begin_layout Verbatim
+5 | 0100101
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+El receptor al extraer la información recibida, ha obtenido la siguiente cadena de bits 0100001 para el último dígito. Efectuar la operación de comprobación. 
+\end_layout
+
+\begin_layout Standard
+Hamming
+\end_layout
+
+\begin_layout Verbatim
+bit 1 = 1
+\end_layout
+
+\begin_layout Verbatim
+bit 2 = 1
+\end_layout
+
+\begin_layout Verbatim
+bit 3 = 1
+\end_layout
+
+\begin_layout Standard
+111 ⊕ 010 = 101
+\end_layout
+
+\begin_layout Standard
+Invierto -
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textgreater
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ 101 - Error en el bit 5
+\end_layout
+
+\begin_layout Standard
+Msg. Original 0100101
+\end_layout
+
+\begin_layout Standard
+Extraigo bits de comprobación (1, 2 y 4): 0101 = 5
+\end_layout
+
+\begin_layout Standard
+El último dígito del mensaje transmitido es 5
+\end_layout
+
+\begin_layout Subsubsection
+6. En qué consiste el esquema CRC (Código de Redundancia Cíclica) para detección de errores
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "en-quuxe9-consiste-el-esquema-crc-cuxf3digo-de-redundancia-cuxedclica-para-detecciuxf3n-de-errores"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El CRC es un valor usado para comprobar que los datos no se alteren durante la transmisión. El transmisor cálcula un CRC y envía el resultado junto con los datos. El receptor cálcula el CRC de los datos recibidos y los compara con el CRC del paquete, si no coinciden el paquete tuvo errores en su tranmisión. CRC no puede detectar todos los errores posibles de tranmisión, por lo que es importante elegir un esquema CRC que tenga una buena probabilidad de detección de errores.
+\end_layout
+
+\begin_layout Subsubsection
+7. Utilizar el polinomio generador de la UIT para generar el CRC correspondiente a un 1 seguido de 15 ceros.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "utilizar-el-polinomio-generador-de-la-uit-para-generar-el-crc-correspondiente-a-un-1-seguido-de-15-ceros."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+$ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Polinomio generador de la UIT: 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ x‸{16} + x‸{12} + x‸{5} + 1$
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \begin{align}
+G(x)& =        10001000000100001 \\
+M(x)& =        1000000000000000 \\
+R(x)& =        0000000000000000 \\
+M(x) + x^r& = 10000000000000000000000000000000 \\
+\end{align}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+10000000000000000000000000000000 | 10001000000100001
+\end_layout
+
+\begin_layout Verbatim
+ 0001000000100001                |
+\end_layout
+
+\begin_layout Verbatim
+ ----------------                |
+\end_layout
+
+\begin_layout Verbatim
+    10000001000010000            |
+\end_layout
+
+\begin_layout Verbatim
+     0001000000100001            |
+\end_layout
+
+\begin_layout Verbatim
+     ----------------            |
+\end_layout
+
+\begin_layout Verbatim
+        1001000110001            |
+\end_layout
+
+\begin_layout Verbatim
+         0001000000100001        |
+\end_layout
+
+\begin_layout Verbatim
+         ----------------        |
+\end_layout
+
+\begin_layout Verbatim
+           11001100110001000     |
+\end_layout
+
+\begin_layout Verbatim
+            0001000000100001     |
+\end_layout
+
+\begin_layout Verbatim
+            ----------------     |
+\end_layout
+
+\begin_layout Verbatim
+            10001001101010010    |
+\end_layout
+
+\begin_layout Verbatim
+             0001000000100001    |
+\end_layout
+
+\begin_layout Verbatim
+             ----------------    |
+\end_layout
+
+\begin_layout Verbatim
+                0001101110011000 |
+\end_layout
+
+\begin_layout Standard
+$ CRC = 0001101110011000 $
+\end_layout
+
+\begin_layout Subsubsection
+8.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "section"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Determinar el mensaje CRC a agregar al mensaje 1100011 con P = 110011, analizar la capacidad de detección de G
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \begin{align}
+G(x)& =        110011 \\
+M(x)& =        1100011 \\
+x^r& =         00000\\
+M(x) + x^r& = 110001100000 \\
+\end{align}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+110001100000 | 110011
+\end_layout
+
+\begin_layout Verbatim
+ 10011       |
+\end_layout
+
+\begin_layout Verbatim
+ -----       |
+\end_layout
+
+\begin_layout Verbatim
+    100000   |
+\end_layout
+
+\begin_layout Verbatim
+     10011   |
+\end_layout
+
+\begin_layout Verbatim
+     -----   |
+\end_layout
+
+\begin_layout Verbatim
+     100110  |
+\end_layout
+
+\begin_layout Verbatim
+      10011  |
+\end_layout
+
+\begin_layout Verbatim
+      -----  |
+\end_layout
+
+\begin_layout Verbatim
+      101010 |
+\end_layout
+
+\begin_layout Verbatim
+       10011 |
+\end_layout
+
+\begin_layout Verbatim
+       ----- |
+\end_layout
+
+\begin_layout Verbatim
+       11001 |
+\end_layout
+
+\begin_layout Verbatim
+      
+\end_layout
+
+\begin_layout Standard
+$ CRC = 11001 $
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Indicar la secuencia de bits a transmitir luego de realizar 
+\begin_inset Quotes eld
+\end_inset
+
+bit stuffing
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+$ M(x) + CRC = 110001111001 $
+\end_layout
+
+\begin_layout Standard
+La secuencia a transmitir sería 01111110 11000111001 01111110
+\end_layout
+
+\begin_layout Subsubsection
+9.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "section-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Determinar el CRC a agregar al mensaje 11011111 con P = 101110
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \begin{align}
+G(x)& =        101110 \\
+M(x)& =        11011111 \\
+x^r& =         00000 \\
+M(x) + x^r& =  1101111100000 \\
+\end{align}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+1101111100000 | 101110
+\end_layout
+
+\begin_layout Verbatim
+ 01110        |
+\end_layout
+
+\begin_layout Verbatim
+ -----        |
+\end_layout
+
+\begin_layout Verbatim
+ 110011       |
+\end_layout
+
+\begin_layout Verbatim
+  01110       |
+\end_layout
+
+\begin_layout Verbatim
+  -----       |
+\end_layout
+
+\begin_layout Verbatim
+  111011      |
+\end_layout
+
+\begin_layout Verbatim
+   01110      |
+\end_layout
+
+\begin_layout Verbatim
+   -----      |
+\end_layout
+
+\begin_layout Verbatim
+   101010     |
+\end_layout
+
+\begin_layout Verbatim
+    01110     |
+\end_layout
+
+\begin_layout Verbatim
+    -----     |
+\end_layout
+
+\begin_layout Verbatim
+      100000  |
+\end_layout
+
+\begin_layout Verbatim
+       01110  |
+\end_layout
+
+\begin_layout Verbatim
+       -----  |
+\end_layout
+
+\begin_layout Verbatim
+        11100 |
+\end_layout
+
+\begin_layout Standard
+$ CRC = 11100 $
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Indicar la secuencia de bits a transmitir luego de realizar 
+\begin_inset Quotes eld
+\end_inset
+
+bit stuffing
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+$ M(x) + CRC = 1101111111100 $
+\end_layout
+
+\begin_layout Standard
+La secuencia a transmitir sería 01111110 11011111
+\series bold
+0
+\series default
+11100 01111110
+\end_layout
+
+\begin_layout Subsubsection
+10. ¿Cuál es la idea principal de los protocolos de ventana corrediza en la capa de enlace?
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "cuuxe1l-es-la-idea-principal-de-los-protocolos-de-ventana-corrediza-en-la-capa-de-enlace"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cada trama contiene un número de secuencia. En cualquier instante el transmisor mantiene un grupo de números de secuencia de tramas enviadas pero no reconocidas, que caen dentro de la ventana transmisora (cantidad de tramas que el transmisor tiene permitido enviar sin esperar Ack) y el receptor mantiene una ventana receptora correspondiente al número de tramas que tiene permitido aceptar.
+\end_layout
+
+\begin_layout Subsubsection
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+texorpdfstring{
+\end_layout
+
+\end_inset
+
+11. Un canal tiene una velocidad de 4kbps y un retardo de propagación de 20ms. ¿Para qué rango de tamaño de trama el método de 
+\begin_inset Quotes eld
+\end_inset
+
+Stop & Wait
+\begin_inset Quotes erd
+\end_inset
+
+ (parada y espera) tiene una eficiencia de utilización del enlace del 40%?
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}{
+\end_layout
+
+\end_inset
+
+11. Un canal tiene una velocidad de 4kbps y un retardo de propagación de 20ms. ¿Para qué rango de tamaño de trama el método de Stop & Wait (parada y espera) tiene una eficiencia de utilización del enlace del 40%?
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "un-canal-tiene-una-velocidad-de-4kbps-y-un-retardo-de-propagaciuxf3n-de-20ms.-para-quuxe9-rango-de-tamauxf1o-de-trama-el-muxe9todo-de-stop-wait-parada-y-espera-tiene-una-eficiencia-de-utilizaciuxf3n-del-enlace-del-40"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = \dfrac{Ttr}{2Ttr + 2\tau} * 100 \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ 0.4 = \dfrac{\dfrac{L_t}{Rb}}{2\dfrac{L_t}{Rb} + 2\tau} \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ 0.4 * 2\dfrac{L_t}{4kb/s} + 40ms = \dfrac{L_t}{4kb/s} \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ (0.8 \dfrac{L_t}{4kb/s} + 40ms) * 4kb/s = L_t \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ 0.8 L_t + 40ms * \dfrac{1s}{1000ms} * 4kb/s = L_t \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ 0.16kb = 0.2L_t \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ 0.08kb = L_t \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para 80 bits de tamaño de trama la eficiencia es de 40%
+\end_layout
+
+\begin_layout Subsubsection
+12. ¿Qué ventajas tienen los protocolos de entubamiento y repeticiones respecto a los protocolos de parada y espera?
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "quuxe9-ventajas-tienen-los-protocolos-de-entubamiento-y-repeticiones-respecto-a-los-protocolos-de-parada-y-espera"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mejoran el aprovechamiento de ancho de banda del canal
+\end_layout
+
+\begin_layout Subsubsection
+13. Interpretar el siguiente esquema de tranmisión de tramas y completar las transferencias. Suponer entubamiento y Regresa n.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "interpretar-el-siguiente-esquema-de-tranmisiuxf3n-de-tramas-y-completar-las-transferencias.-suponer-entubamiento-y-regresa-n."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(En otra hoja)
+\end_layout
+
+\begin_layout Subsubsection
+14. Un enlace de 2 Mbps consiste de dos subestaciones separadas 50km, conectadas mediante cable coaxil, con 5 repetidoras que poseen retardo propio de 4 µseg c/u. La longitud de las tramas es de 2000 bits y la velocidad de propagación en el cable de 200000km/s. Calcular la eficiencia de utilización del enlace para los siguientes casos:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "un-enlace-de-2-mbps-consiste-de-dos-subestaciones-separadas-50km-conectadas-mediante-cable-coaxil-con-5-repetidoras-que-poseen-retardo-propio-de-4-uxb5seg-cu.-la-longitud-de-las-tramas-es-de-2000-bits-y-la-velocidad-de-propagaciuxf3n-en-el-cable-de-200000kms.-calcular-la-eficiencia-de-utilizaciuxf3n-del-enlace-para-los-siguientes-casos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+S&W 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = \dfrac{Ttr}{2Ttr + 2\tau} * 100 \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ Ttr = \dfrac{L_t}{Rb} \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ Ttr = \dfrac{2kb}{2000kb/s} = 0.001s \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ 200000km/s * \dfrac{1s}{1000000\mu s} = 0.2km/mu s \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ \tau = \dfrac{50km}{0.2km/s} + 20\mu s = 270\mu s \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ \tau = 270 \mu s * \dfrac{1s}{1000000\mu s} = 0.00027s \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = \dfrac{0.001s}{0.002s + 0.00027s} * 100 = 44\% \]
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Entubamiento con N=3 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E_{S\&W} * N = E_{N} \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E_{N=3} = 100\% \]
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+S&W pero despreciando trama de acuse de recibo 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = \dfrac{Ttr}{Ttr + 2\tau} * 100 \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = \dfrac{0.001s}{0.001s + 0.00027s} * 100 = 44\% \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = 78.7\% \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+15. En un enlace a la luna de 1Mbps, se tiene un retardo de ida de 1.28s, que corresponde a una distancia de 384400km a la tierra. Suponiendo tramas de datos de 500 bytes, ¿cuál será la eficiencia del sistema si:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "en-un-enlace-a-la-luna-de-1mbps-se-tiene-un-retardo-de-ida-de-1.28s-que-corresponde-a-una-distancia-de-384400km-a-la-tierra.-suponiendo-tramas-de-datos-de-500-bytes-cuuxe1l-seruxe1-la-eficiencia-del-sistema-si"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se desprecia el tiempo de acuse de recibo? 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = \dfrac{Ttr}{2Ttr + 2\tau} * 100 \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ Ttr = 0.004s \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = \dfrac{0.004s}{0.004s + 2.56s} * 100 = 0.156\% \]
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se utiliza protocolo S&W 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E = \dfrac{0.004s}{0.008s + 2.56s} * 100 = 0.156\% \]
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Se emplea entubamiento con Vx = 127 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E_{S\&W} * N = E_{N} \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ E_{N=27} = 19.78\% \]
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+¿Cuál sería el tamaño mínimo de ventana de tranmisión para E = 100%? 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ N = \dfrac{100}{E_{S\&W}} \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[ N = 642 \]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+16. ¿Qué información contiene el formato de trama del protocolo HDLC? ¿Es orientado a bits o a carácter?
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "quuxe9-informaciuxf3n-contiene-el-formato-de-trama-del-protocolo-hdlc-es-orientado-a-bits-o-a-caruxe1cter"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Orientado a bits, la organización de la información es la siguiente.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+itemsep
+\end_layout
+
+\end_inset
+
+1pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parskip
+\end_layout
+
+\end_inset
+
+0pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+parsep
+\end_layout
+
+\end_inset
+
+0pt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+16 bits para relleno de bits 
+\end_layout
+
+\begin_layout Itemize
+8 bits para dirección 
+\end_layout
+
+\begin_layout Itemize
+8 bits para control 
+\end_layout
+
+\begin_layout Itemize
+datos 
+\end_layout
+
+\begin_layout Itemize
+16 bits de CRC 
+\end_layout
+
+\begin_layout Standard
+Hay 3 tipos de tramas, de información, de supervisión y no numeradas. Su campo de control:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ ::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+:——————:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+:———–:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+:——————: 0 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ Secuencia (3 bits) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ S/F (1 bit) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ Siguiente (3 bits) 10
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ Tipo (2 bits) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ S/F (1 bit) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ Siguiente (3 bits) 11
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ Tipo (2 bits) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ S/F (1 bit) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{}
+\end_layout
+
+\end_inset
+
+ Siguiente (3 bits)
+\end_layout
+
+\begin_layout Standard
+S/F = Sondeo/Final, cuando una computadora sondea un grupo de terminales. S invita a enviar datos y última trama termina con F.
+\end_layout
+
+\begin_layout Standard
+Tipo = Tipo de trama de supervisión.
+\end_layout
+
+\begin_layout Subsubsection
+17. ¿Qué protocolos emplea internet en la Capa de Enlace?
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "quuxe9-protocolos-emplea-internet-en-la-capa-de-enlace"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+SLIP y PPP
+\end_layout
+
+\begin_layout Subsubsection
+18. ¿Qué ventajas tiene PPP al emplear relleno de carácteres para evitar indicadores accidentales en los datos respecto al relleno de bits que emplea HDLC?
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset CommandInset label
+LatexCommand label
+name "quuxe9-ventajas-tiene-ppp-al-emplear-relleno-de-caruxe1cteres-para-evitar-indicadores-accidentales-en-los-datos-respecto-al-relleno-de-bits-que-emplea-hdlc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Garantiza una tranmisión más confiable de datos al facilitar la sincronización.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{Verbatim}
+\end_layout
+
+\end_inset
+
+[commandchars=
+\begin_inset Newline newline
+\end_inset
+
+{}] 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{incolor}
+\end_layout
+
+\end_inset
+
+In [
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{incolor}
+\end_layout
+
+\end_inset
+
+24
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+]:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+l+m+mi
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+100
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+o
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+p
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+(
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+l+m+mi
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+100
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+o
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+*
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+l+m+mf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.004
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+o
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+p
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+(
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+l+m+mf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.008
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+o
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
++
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+l+m+mf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+2.56
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+p
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+p
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{Verbatim}
+\end_layout
+
+\end_inset
+
+[commandchars=
+\begin_inset Newline newline
+\end_inset
+
+{}] 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{outcolor}
+\end_layout
+
+\end_inset
+
+Out[
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{outcolor}
+\end_layout
+
+\end_inset
+
+24
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+]:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 641.9999999999999 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{Verbatim}
+\end_layout
+
+\end_inset
+
+[commandchars=
+\begin_inset Newline newline
+\end_inset
+
+{}] 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{incolor}
+\end_layout
+
+\end_inset
+
+In [
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{incolor}
+\end_layout
+
+\end_inset
+
+16
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+]:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+l+m+mf
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+0.001
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+o
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+n
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Out
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+p
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+[
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+l+m+mi
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+15
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+PY
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+p
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+] 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{Verbatim}
+\end_layout
+
+\end_inset
+
+[commandchars=
+\begin_inset Newline newline
+\end_inset
+
+{}] 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{outcolor}
+\end_layout
+
+\end_inset
+
+Out[
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{outcolor}
+\end_layout
+
+\end_inset
+
+16
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+]:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 0.7874015748031495 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% Add a bibliography block to the postdoc
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
