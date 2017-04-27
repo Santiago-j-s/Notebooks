@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Práctico 6</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Apuntes</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11749,133 +11749,90 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pr&#225;ctico-6">Pr&#225;ctico 6<a class="anchor-link" href="#Pr&#225;ctico-6">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>CAPA DE TRANSPORTE</li>
-<li>Escoge trayectorias adecuadas (F)</li>
-<li>Se ocupa de la transmisión de bits por el canal de tranmisión (F)</li>
-<li>Es clave para entender los protocolos en capas (V)</li>
-<li>Limite principal entre usuario y proveedor (V)</li>
-<li>Maneja problemas de interconexión entre redes diferentes (F)</li>
-<li>Se maneja mediante primitivas de servicios (V)</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>FUNCIONES DE LA CAPA DE TRANSPORTE</li>
-<li>(V)</li>
-<li>(F)</li>
-<li>(V)</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>TIPOS DE SERVICIOS</li>
-<li>V</li>
-<li>V</li>
-<li>F</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Esquemas de direccionamiento </li>
-<li>V</li>
-<li>F</li>
-<li>V</li>
-<li>V</li>
-<li>V</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Protocolos de Transporte</li>
-<li>F</li>
-<li>V</li>
-<li>F</li>
-<li>V</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Direccionamiento en protocolos de transporte</li>
-<li>V</li>
-<li>F</li>
-<li>F</li>
-<li>V</li>
-<li>F</li>
-<li>V</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Administración de conexiones</li>
-<li>F</li>
-<li>V</li>
-<li>F</li>
-<li>V</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Ascendente</li>
-</ol>
+<h1 id="Apuntes">Apuntes<a class="anchor-link" href="#Apuntes">&#182;</a></h1><h2 id="Capas-Modelo-OSI">Capas Modelo OSI<a class="anchor-link" href="#Capas-Modelo-OSI">&#182;</a></h2><ul>
+<li>Capa Física</li>
+<li>Capa de Enlace de Datos</li>
+<li>Capa de Red</li>
+<li>Capa de Transporte</li>
+<li>Capa de Sesión</li>
+<li>Capa de Presentación</li>
+<li>Capa de Aplicación</li>
+</ul>
+<h3 id="Capa-F&#237;sica">Capa F&#237;sica<a class="anchor-link" href="#Capa-F&#237;sica">&#182;</a></h3><p>Se ocupa de tx de bits por el canal de comunicación.</p>
+<p>Diseño de aspectos mecánico eléctrico, de procedimiento de interfase y el medio de tx física, que se encuentra bajo la capa física.</p>
+<p>Voltajes del bit 1 o 0, duración del bit, tx bidireccional, establecimiento y desconexión de comunicaciones, cantidad de pines en conectores.</p>
+<h3 id="Capa-de-Enlace-de-Datos">Capa de Enlace de Datos<a class="anchor-link" href="#Capa-de-Enlace-de-Datos">&#182;</a></h3><p>A partir de una línea de tx común, transformarla en una línea sin errores para la capa de red.</p>
+<p>Emisor divide entrada de datos en tramas, las transmite secuencialmente y procesa las tramas de reconocimiento devueltas por el receptor.</p>
+<p>Emplea mecanismos de regulación de tráfico para evitar que tranmisor muy rápido sature a receptor lento.</p>
+<p>Subcapa MAC en redes de difusión tienen control de acceso al medio compartido</p>
+<h3 id="Capa-de-Red">Capa de Red<a class="anchor-link" href="#Capa-de-Red">&#182;</a></h3><p>Se ocupa del control de operación de la subred.</p>
+<p>Determina como encaminar los paquetes de origen a destino con tablas estáticas o dinámicas de ruteo.</p>
+<p>Controla congestión y contabilidad de paquetes.</p>
+<p>Resuelve problemas de interconexión de redes heterogéneas.</p>
+<h3 id="Capa-de-Transporte">Capa de Transporte<a class="anchor-link" href="#Capa-de-Transporte">&#182;</a></h3><p>Acepta datos de la capa de sesión, los divide en unidades más pequeñas, los pasa a la capa de red y se asegura de que lleguen correctamente al otro extremo.</p>
+<p>Normalmente crea una conexión de red distinta para cada conexión de transporte solicitada, aunque según caudal puede crear múltiples conexiones de red. O si conexión es costosa puede multiplexar varias conexiones de transporte a la misma conexión de red.</p>
+<p>Determina tipo de servicio a dar a capa de sesión (Canal P a P o Difusión de mensajes a múltiples destinos).</p>
+<p>Provee mecanismos de control de flujo.</p>
+<h3 id="Capa-de-Sesi&#243;n">Capa de Sesi&#243;n<a class="anchor-link" href="#Capa-de-Sesi&#243;n">&#182;</a></h3><p>Permite a distintos dispositivos crear sesiones entre ellos.
+,
+Coordina sesiones en uno o más procesos corriendo en distintos hosts.</p>
+<p>Una sesión permite transporte de datos, pero con mejores servicios que capa de transporte, como acceso a sistema remoto de tiempo compartido o transferencia de archivos entre dos máquinas.</p>
+<p>Control del diálogo. Manejo de testigo (ficha o token). Sincronización</p>
+<h3 id="Capa-de-Presentaci&#243;n">Capa de Presentaci&#243;n<a class="anchor-link" href="#Capa-de-Presentaci&#243;n">&#182;</a></h3><p>Realiza funciones de búsqueda de soluciones generales. Síntaxis y semántica de la información transmitida.</p>
+<p>Codificación y compresión de datos. Criptografía.</p>
+<h3 id="Capa-de-Aplicaci&#243;n">Capa de Aplicaci&#243;n<a class="anchor-link" href="#Capa-de-Aplicaci&#243;n">&#182;</a></h3><p>Contiene protocolos que se necesitan con frecuencia para interfase de procesos de usuarios.</p>
+<p>Transferencia de archivos, correo electrónico, carga remota de trabajos, otros recursos de uso general.</p>
+<h2 id="Tranmisi&#243;n-de-datos-en-modelo-OSI">Tranmisi&#243;n de datos en modelo OSI<a class="anchor-link" href="#Tranmisi&#243;n-de-datos-en-modelo-OSI">&#182;</a></h2><p><strong>La tranmisión de datos es vertical, sin embargo cada capa se programa como sistema horizontal.</strong></p>
+<h2 id="Modelo-TCP/IP">Modelo TCP/IP<a class="anchor-link" href="#Modelo-TCP/IP">&#182;</a></h2><p>Host a Red
+Interred
+Transporte
+Aplicación</p>
+<p><strong> El modelo TCP/IP no distingue claramente conceptos de servicio, interfase y protocolo. </strong></p>
+<table>
+<thead><tr>
+<th>OSI</th>
+<th>TCP/IP</th>
+<th>Tanenbaum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capa Física</td>
+<td>Capa de Host a la red</td>
+<td>Capa Física</td>
+</tr>
+<tr>
+<td>Capa de Enlace de Datos</td>
+<td></td>
+<td>Capa de Enlace de Datos</td>
+</tr>
+<tr>
+<td>Capa de Red</td>
+<td>Capa de Interred</td>
+<td>Capa de Red</td>
+</tr>
+<tr>
+<td>Capa de Transporte</td>
+<td>Capa de Transporte</td>
+<td>Capa de Transporte</td>
+</tr>
+<tr>
+<td>Capa de Sesión</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Capa de Presentación</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Capa de Aplicación</td>
+<td>Capa de Aplicación</td>
+<td>Capa de Aplicación</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
