@@ -1,0 +1,34 @@
+[[source]]
+
+verify_ssl = true
+name = "pypi"
+url = "https://pypi.python.org/simple"
+
+
+[dev-packages]
+
+
+
+[requires]
+
+python_version = "3.5"
+
+
+[packages]
+
+numpy = "*"
+scipy = "*"
+matplotlib = "*"
+ipython = "*"
+jupyter = "*"
+pandas = "*"
+sympy = "*"
+nose = "*"
+jupyterlab = "*"
+scikit-image = "*"
+seaborn = "*"
+statsmodels = "*"
+requests = "*"
+lxml = "*"
+scikit-learn = "*"
+pip = "*"
